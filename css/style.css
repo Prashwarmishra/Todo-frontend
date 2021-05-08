@@ -43,13 +43,6 @@ body main #todo-input-section input, body main #todo-input-section button {
   border: none;
   outline: none;
   margin: 0.5rem;
-  -webkit-transition: all 500ms;
-  transition: all 500ms;
-}
-
-body main #todo-input-section input:hover, body main #todo-input-section button:hover {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
 }
 
 body main #todo-input-section input {
@@ -93,6 +86,14 @@ body main #todo-input-section button {
           box-shadow: 4px 4px 4px #cbced1, -4px -4px 12px #ffffff;
   padding: 0.5rem;
   width: 40px;
+  cursor: pointer;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
+}
+
+body main #todo-input-section button:hover {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 body main .todo-controls {
@@ -149,8 +150,8 @@ body main #todo-list .todo {
           box-shadow: 8px 8px 8px #cbced1;
   margin: 0.15rem;
   border-radius: 10px;
-  -webkit-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  -webkit-transition: all 250ms linear;
+  transition: all 250ms linear;
 }
 
 body main #todo-list .todo .todo-checkbox {
@@ -161,9 +162,26 @@ body main #todo-list .todo .todo-task {
   font-size: 1.1rem;
 }
 
+body main #todo-list .todo .todo-delete-button {
+  border: none;
+  font-size: 1em;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+body main #todo-list .todo .selected {
+  text-decoration: line-through;
+}
+
 body main #todo-list .todo:hover {
   background-color: skyblue;
   -webkit-box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
           box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
+}
+
+body main #todo-list .fall {
+  -webkit-transform: translateY(6rem) rotateZ(10deg);
+          transform: translateY(6rem) rotateZ(10deg);
 }
 /*# sourceMappingURL=style.css.map */

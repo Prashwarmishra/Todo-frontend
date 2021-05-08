@@ -29,11 +29,10 @@ body{
                 border: none;
                 outline: none;
                 margin: 0.5rem;
-                transition: all 500ms;
             }
-            input:hover, button:hover{
-                transform: scale(0.95);
-            }
+            // input:hover, button:hover{
+            //     transform: scale(0.95);
+            // }
             input{
                 background: none;
                 font-size: 18px;
@@ -53,6 +52,11 @@ body{
                 box-shadow: 4px 4px 4px #cbced1, -4px -4px 12px #ffffff;
                 padding: 0.5rem;
                 width: 40px;
+                cursor: pointer;
+                transition: all 250ms;
+            }
+            button:hover{
+                transform: scale(0.8);
             }
         }
         .todo-controls{
@@ -88,17 +92,30 @@ body{
                 box-shadow: 8px 8px 8px #cbced1;
                 margin: 0.15rem;
                 border-radius: 10px;
-                transition: all 500ms ease-in-out;
+                transition: all 250ms linear;
                 .todo-checkbox{
                     margin: auto;
                 }
                 .todo-task{
                     font-size: 1.1rem;
                 }
+                .todo-delete-button{
+                    border: none;
+                    font-size: 1em;
+                    background: transparent;
+                    cursor: pointer;
+                    width: 100%;
+                }
+                .selected{
+                    text-decoration: line-through;
+                }
             }
             .todo:hover{
                 background-color: skyblue;
                 box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
+            }
+            .fall{
+                transform: translateY(6rem) rotateZ(10deg);
             }
         }
         
