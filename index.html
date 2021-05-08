@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c0cd0458d0.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>TODO</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -17,8 +18,70 @@
 
     <main>
         <section id="todo-input-section">
-            <input type="text" id="task-input" placeholder="Add tasks here..." required>
+            <input type="text" id="todo-input" placeholder="Add tasks here..." required>
             <button type="submit">+</button>
+        </section>
+        <section id="todo-task-section">
+
+            <div class="todo-controls">
+                <p>
+                    <span><i class="fas fa-check-double"></i></span>
+                    <span>Complete all tasks</span>
+                </p>
+
+                <p>
+                    <span><i class="fas fa-broom"></i></span>
+                    <span>Clear Completed</span>
+                </p>
+            </div>
+
+            <hr>
+            
+            <ul id="todo-list">
+                <div class="todo">
+                    <input type="checkbox" class="todo-checkbox">
+                    <li class="todo-task">
+                        <span>Buy Eggs</span>
+                    </li>
+                    <span><i class="fas fa-minus-circle"></i></span>
+                </div>
+
+                <div class="todo">
+                    <input type="checkbox" class="todo-checkbox">
+                    <li class="todo-task">
+                        <span>Buy Eggs</span>
+                    </li>
+                    <span><i class="fas fa-minus-circle"></i></span>
+                </div>
+
+                <div class="todo">
+                    <input type="checkbox" class="todo-checkbox">
+                    <li class="todo-task">
+                        <span>Buy Eggs</span>
+                    </li>
+                    <span><i class="fas fa-minus-circle"></i></span>
+                </div>
+            </ul>
+
+            <hr>
+
+            <div class="todo-controls">
+                <p id="tasks-left">
+                    <span><b>3</b></span>
+                    <span>tasks left</span>
+                </p>
+
+                <p>
+                    <span>All</span>
+                </p>
+                <p>
+                    <span>Uncomplete</span>
+                </p>
+                <p>
+                    <span>Completed</span>
+                </p>
+            </div>
+
         </section>
     </main>
 

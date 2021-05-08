@@ -12,20 +12,21 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body header h1 {
-  letter-spacing: 5px;
+  letter-spacing: 10px;
 }
 
 body main {
-  width: 500px;
-  height: 300px;
+  width: 400px;
+  padding: 1rem;
   -webkit-box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
           box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
   margin: 20px;
   border-radius: 2rem;
+  /*todo-task-section*/
 }
 
 body main #todo-input-section {
@@ -42,14 +43,22 @@ body main #todo-input-section input, body main #todo-input-section button {
   border: none;
   outline: none;
   margin: 0.5rem;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+body main #todo-input-section input:hover, body main #todo-input-section button:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 body main #todo-input-section input {
   background: none;
   font-size: 18px;
   color: #555;
+  font-weight: 100;
   border-radius: 1rem;
-  padding: 0.5em;
+  padding: 0.5em 1em;
   -webkit-box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
           box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
 }
@@ -57,21 +66,25 @@ body main #todo-input-section input {
 body main #todo-input-section input::-webkit-input-placeholder {
   color: #555;
   opacity: 1;
+  font-size: 0.9em;
 }
 
 body main #todo-input-section input:-ms-input-placeholder {
   color: #555;
   opacity: 1;
+  font-size: 0.9em;
 }
 
 body main #todo-input-section input::-ms-input-placeholder {
   color: #555;
   opacity: 1;
+  font-size: 0.9em;
 }
 
 body main #todo-input-section input::placeholder {
   color: #555;
   opacity: 1;
+  font-size: 0.9em;
 }
 
 body main #todo-input-section button {
@@ -80,5 +93,77 @@ body main #todo-input-section button {
           box-shadow: 4px 4px 4px #cbced1, -4px -4px 12px #ffffff;
   padding: 0.5rem;
   width: 40px;
+}
+
+body main .todo-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+body main .todo-controls p {
+  padding: 0.5rem;
+  margin: 0;
+  border-radius: 14px;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  cursor: pointer;
+}
+
+body main .todo-controls #tasks-left {
+  margin-right: 9em;
+}
+
+body main .todo-controls > p:hover {
+  -webkit-box-shadow: 4px 4px 4px #cbced1, -4px -4px 12px #ffffff;
+          box-shadow: 4px 4px 4px #cbced1, -4px -4px 12px #ffffff;
+}
+
+body main #todo-list {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main #todo-list .todo {
+  display: -ms-grid;
+  display: grid;
+  height: 2rem;
+  -ms-grid-columns: 1fr 8fr 1fr;
+      grid-template-columns: 1fr 8fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem;
+  -webkit-box-shadow: 8px 8px 8px #cbced1;
+          box-shadow: 8px 8px 8px #cbced1;
+  margin: 0.15rem;
+  border-radius: 10px;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+body main #todo-list .todo .todo-checkbox {
+  margin: auto;
+}
+
+body main #todo-list .todo .todo-task {
+  font-size: 1.1rem;
+}
+
+body main #todo-list .todo:hover {
+  background-color: skyblue;
+  -webkit-box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
+          box-shadow: 8px 8px 8px #cbced1, -8px -8px 8px #ffffff;
 }
 /*# sourceMappingURL=style.css.map */
