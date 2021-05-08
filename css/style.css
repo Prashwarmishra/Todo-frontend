@@ -1,5 +1,84 @@
 body {
   margin: 0;
   padding: 0;
+  background: #ecf0f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body header h1 {
+  letter-spacing: 5px;
+}
+
+body main {
+  width: 500px;
+  height: 300px;
+  -webkit-box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+          box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+  margin: 20px;
+  border-radius: 2rem;
+}
+
+body main #todo-input-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem;
+}
+
+body main #todo-input-section input, body main #todo-input-section button {
+  border: none;
+  outline: none;
+  margin: 0.5rem;
+}
+
+body main #todo-input-section input {
+  background: none;
+  font-size: 18px;
+  color: #555;
+  border-radius: 1rem;
+  padding: 0.5em;
+  -webkit-box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+          box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}
+
+body main #todo-input-section input::-webkit-input-placeholder {
+  color: #555;
+  opacity: 1;
+}
+
+body main #todo-input-section input:-ms-input-placeholder {
+  color: #555;
+  opacity: 1;
+}
+
+body main #todo-input-section input::-ms-input-placeholder {
+  color: #555;
+  opacity: 1;
+}
+
+body main #todo-input-section input::placeholder {
+  color: #555;
+  opacity: 1;
+}
+
+body main #todo-input-section button {
+  border-radius: 50%;
+  -webkit-box-shadow: 4px 4px 4px #cbced1, -4px -4px 12px #ffffff;
+          box-shadow: 4px 4px 4px #cbced1, -4px -4px 12px #ffffff;
+  padding: 0.5rem;
+  width: 40px;
 }
 /*# sourceMappingURL=style.css.map */
