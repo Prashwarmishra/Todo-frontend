@@ -12,6 +12,8 @@ let completedTaskButton = document.querySelector('#completed-tasks');
 
 /*-------------------------------------Event-Listeners------------------------------------------*/
 
+window.addEventListener('DOMContentLoaded', fetchFromLocalStorage);
+
 //update list when submit button is clicked
 todoSubmitButton.addEventListener('click', updateList);
 
@@ -70,6 +72,9 @@ function updateList(event){
 
     //add li to todo-list
     todoList.append(todo);
+
+    //add todo input value to localStorage
+    addToLocalStorage(todoInput.value);
 
     //add class selected to the li when checkbox is ticked
     checkBoxInput.addEventListener('click', function(){
@@ -199,5 +204,103 @@ function deleteTask(todo){
     todo.addEventListener('transitionend', function(e){
         todo.remove();
         updateTasksLeft();
+        deleteFromLocalStorage(todo);
     });
 }
+
+//function to check local storage for pending todos when browser is refreshed
+function checkLocalStorage(){
+
+    //if nothing exists return an empty array
+    if(localStorage.getItem('todos') === null){
+        return [];
+    }
+    //else return the stored data as an array
+    else{
+        return JSON.parse(localStorage.getItem('todos'));
+    }
+}
+
+//function to add todo to local storage
+function addToLocalStorage(todoListItem){
+
+    //get all existing todos from local storage
+    let todos = checkLocalStorage();
+    
+    //push the todoListItem to that array
+    todos.push(todoListItem);
+
+    //push the array back into local storage
+    localStorage.setItem('todos', JSON.stringify(todos));
+
+}
+
+//function to get todos from local storage and display them on homepage
+function fetchFromLocalStorage(){
+    let todos = checkLocalStorage();
+
+    todos.forEach(currentTodo => {
+        //create a div
+        let todo = document.createElement('div');
+        //add class todo to the div
+        todo.classList.add('todo');
+
+        //create a checkbox input
+        let checkBoxInput = document.createElement('input');
+        checkBoxInput.type = 'checkbox';
+        checkBoxInput.name = 'todo-checkbox';
+        //add class to the checkbox input
+        checkBoxInput.classList.add('todo-checkbox');
+
+        //add a li
+        let todoListItem = document.createElement('li');
+        //add class to li
+        todoListItem.classList.add('todo-task');
+
+        //add todo input value to li
+        todoListItem.innerHTML = currentTodo;
+
+        //create delete button
+        let deleteButton = document.createElement('button');
+        //add class to delete button
+        deleteButton.classList.add('todo-delete-button');
+        //add delete-icon to deleteButton
+        deleteButton.innerHTML = `<span><i class="fas fa-minus-circle"></i></span>`;
+
+        //append checkbox checkBoxInput, li and deleteButton to div
+        todo.append(checkBoxInput);
+        todo.append(todoListItem);    
+        todo.append(deleteButton);
+
+        //add li to todo-list
+        todoList.append(todo);
+
+        //add class selected to the li when checkbox is ticked
+        checkBoxInput.addEventListener('click', function(){
+            todoListItem.classList.toggle('selected');
+
+            //update uncompleted tasks
+            updateTasksLeft();
+        });
+
+        //activate todo delete button
+        deleteButton.addEventListener('click', function(){
+            deleteTask(todo);
+        });
+
+        //update uncompleted tasks
+        updateTasksLeft();
+    });
+
+}
+
+//function to delete todo from localStorage
+function deleteFromLocalStorage(todo){
+    let todoListItem = todo.querySelector('.todo-task').innerText;
+    let todos = checkLocalStorage();
+
+    todos.splice(todos.indexOf(todoListItem), 1);
+
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
+
